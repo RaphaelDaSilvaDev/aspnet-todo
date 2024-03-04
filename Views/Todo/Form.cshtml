@@ -1,0 +1,23 @@
+@model asp_todo.Models.Todo
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST">
+  <div class="mb-3">
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title" class="form-control">
+    <span asp-validation-for="Title" class="text-danger"></span>
+  </div>
+   <div class="mb-3">
+    <label asp-for="DeadLine">DeadLine</label>
+    <input asp-for="DeadLine" type="date" class="form-control">
+    <span asp-validation-for="DeadLine" class="text-danger"></span>
+  </div>
+
+
+  @if(ViewData["Title"].Equals("Create Task")){
+    <button class="btn btn-primary" type="submit">Create</button>
+  }else{
+   <button class="btn btn-primary" type="submit">Edit</button>
+  }
+</form>

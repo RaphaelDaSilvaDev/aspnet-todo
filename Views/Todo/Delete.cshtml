@@ -1,0 +1,8 @@
+@model asp_todo.Models.Todo
+<h1>@ViewData["Title"]</h1>
+<p>You want to delete <strong>@Model.Title</strong>?</p>
+
+<form method="POST">
+  <button class="btn btn-danger">Remove</button>
+  <a asp-controller="Todo" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
